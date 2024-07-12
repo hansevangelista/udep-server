@@ -33,15 +33,15 @@ export default async function handler(req, res) {
     const user = await User.findOne({ email, password })
     if(!user) res.json({ error: true, msg: 'Email o password incorrecto' })
 
-    // const token = jwt.sign({ id: user.id }, 'shhhhh')
-    // console.log({ token })
+    const token = jwt.sign({ id: user.id }, 'shhhhh')
+    console.log({ token })
 
 
     client.close()
 
     res.json({
       error: false,
-      // token,
+      token,
     })
   }
 }
