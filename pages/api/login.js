@@ -2,7 +2,7 @@ import NextCors from 'nextjs-cors'
 import { MongoClient } from 'mongodb'
 import jwt from 'jsonwebtoken'
 
-const url = 'mongodb+srv://admin:udeprace2024@udeprace.3hp1muh.mongodb.net/?retryWrites=true&w=majority&appName=udeprace'
+const url = 'mongodb+srv://admin:udeprace2024@udeprace.3hp1muh.mongodb.net/'
 const client = new MongoClient(url)
 
 const dbName = 'udeprace'
