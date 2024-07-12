@@ -42,7 +42,7 @@ export default async function handler(req, res) {
     console.log({ email, name })
 
     const user = await User.findOne({ email })
-    if(user) res.json({ error: true, msg: 'El email ya existe' })
+    if(user) return res.json({ error: true, msg: 'El email ya existe' })
 
     const id = rand()
 

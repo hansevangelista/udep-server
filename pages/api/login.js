@@ -31,7 +31,7 @@ export default async function handler(req, res) {
     console.log({ email, password })
 
     const user = await User.findOne({ email, password })
-    if(!user) res.json({ error: true, msg: 'Email o password incorrecto' })
+    if(!user) return res.json({ error: true, msg: 'Email o password incorrecto' })
 
     const token = jwt.sign({ id: user.id }, 'shhhhh')
     console.log({ token })
